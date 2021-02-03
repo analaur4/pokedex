@@ -5,7 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {
     path: 'pokedex',
-    loadChildren: 'src/app/modules/pokedex/pokedex.module#PokedexModule'
+    loadChildren: () => import('src/app/modules/pokedex/pokedex.module').then(m => m.PokedexModule)
   }
 ];
 
