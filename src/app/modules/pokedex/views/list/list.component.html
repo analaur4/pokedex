@@ -1,10 +1,31 @@
 <input [(ngModel)]="nameFilter" type="text" id="poke-filter" placeholder="Search" maxlength="20">
 
-<img [src]="pkmSprite" class="selected-pkm" *ngIf="selectedPokemon != null">
+<div *ngIf="pokemonList.length > 0">
+    
+    <div class="selected-pkm" *ngIf="selectedPokemon != null">
+        <app-information [pokemonNumber]="pkmSprite"></app-information>
+    </div>
+    
+    <div class="not-selected-pkm" *ngIf="selectedPokemon == null">
+        <h1>Welcome to my Pokédex</h1>
+    
+        <ul class="list-one">
+            <li>Click on a Pokémon to view its information as:</li>
+            <li>
+                <ul class="list-two">
+                    <li>Attack</li>
+                    <li>Defense</li>
+                    <li>Sp Atk</li>
+                    <li>Sp Def</li>
+                    <li>Speed</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    
+    <ul class="poke-list">
+        <app-list-item *ngFor="let pokemon of pokemonList" [pokemon]="pokemon" (click)="selectPokemon(pokemon)"></app-list-item>
+    </ul>
+</div>
 
-<ul class="poke-list">
-    <li *ngFor="let pokemon of pokemonList" class="poke-list-item" (mouseenter)="selectPokemon(pokemon)">
-        <img src="//serebii.net/pokedex-xy/icon/{{ pokemon.number | number: '3.0-0' }}.png" alt="{{ pokemon.name }}">
-        <span>#{{ pokemon.number | number: '3.0-0' }} - {{ pokemon.name }}</span>
-    </li>
-</ul>
+<app-not-found *ngIf="pokemonList.length == 0" [pokemonName]="nameFilter"></app-not-found>

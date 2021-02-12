@@ -21,9 +21,32 @@
 }
 
 .selected-pkm {
+    left: 8%;
     position: fixed;
-    top: 35px;
-    left: 15%;
+    top: 100px;
+}
+
+.not-selected-pkm {
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    left: 5%;
+    position: fixed;
+    top: 100px;
+}
+
+.not-selected-pkm h1 {
+    color: #FF0000B0;
+    text-transform: uppercase;
+    width: 50%;
+}
+
+.not-selected-pkm ul.list-one {
+    margin: 0;
+    padding: 0;
+}
+
+.not-selected-pkm .list-one>li {
+    list-style: none;
 }
   
 .poke-list {
@@ -35,27 +58,4 @@
     opacity: 0.95; 
     text-transform: capitalize;
     width: 55%;
-}
-
-.poke-list-item {
-    align-items: center;
-    background-color: #333;
-    border: 1px solid black;
-    border-radius: 20px;
-    color: white;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    list-style: none;
-    padding: 10px;
-    position: relative;
-}
-
-.poke-list-item:hover {
-    background-color: #555; 
-    border: 1px solid #FFF;
-}
-
-.poke-list-item img{
-    width: 55px;
 }

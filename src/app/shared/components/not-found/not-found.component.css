@@ -1,0 +1,18 @@
+.container-not-found {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 100px auto;
+    width: 500px;
+}
+
+.container-not-found h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+.container-not-found h1 strong {
+    text-transform: uppercase;
+    color: #FF0000B0;
+}

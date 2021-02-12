@@ -20,12 +20,13 @@ export class ListComponent implements OnInit {
   
   get pkmSprite() {
     const number = ('000' + this.selectedPokemon.number).slice(-3);
-    return `//serebii.net/sunmoon/pokemon/${number}.png`;
+    return number;
   }
 
   constructor(private pokeapiService: PokeapiService) { }
 
   ngOnInit(): void {
+    this.pokeapiService.listAll();
   }
 
   selectPokemon(pkm) {
