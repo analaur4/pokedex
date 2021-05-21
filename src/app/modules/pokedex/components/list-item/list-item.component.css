@@ -1,6 +1,5 @@
 .poke-list-item {
     align-items: center;
-    background-color: #333;
     border: 1px solid black;
     border-radius: 20px;
     color: white;
@@ -15,7 +14,6 @@
 }
 
 .poke-list-item:hover {
-    background-color: #555; 
     border: 1px solid #FFF;
 }
 

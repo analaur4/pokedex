@@ -1,8 +1,8 @@
-<div class="poke-container">
-    <div class="poke-profile">
-        <app-loading *ngIf="isLoading"></app-loading>
+<div class="poke-container" [style.background]="backgroundColorStats">
+    <app-loading *ngIf="isLoading"></app-loading>
 
-        <div *ngIf="!isLoading" class="screen-profile">
+    <div *ngIf="!isLoading" class="poke-profile">
+        <div class="screen-profile">
             <div>{{ pokemonNumber | myNumber }} - {{ pokemon.name }}</div>
             <img src="//serebii.net/sunmoon/pokemon/{{pokemonNumber | myNumber}}.png" alt="Pokemon" class="poke-sprite">
             
@@ -13,21 +13,41 @@
             </ul>
         </div>
     </div>
-    
-    <table class="stats">
-        <tr>
-            <td>Attack</td>
-            <td>Defense</td>
-            <td>Sp Atk</td>
-            <td>Sp Def</td>
-            <td>Speed</td>
-        </tr>
-        <tr>
-            <td>{{ pokemon.attack }}</td>
-            <td>{{ pokemon.defense }}</td>
-            <td>{{ pokemon.sp_atk }}</td>
-            <td>{{ pokemon.sp_def }}</td>
-            <td>{{ pokemon.speed }}</td>
-        </tr>
-    </table>
+
+    <div *ngIf="!isLoading" class="stats">
+        <div class="stats-item">
+            <span>Attack</span>
+            <div class="container-progress-bar">
+                <div class="progress-bar" [style.width.%]="pokemon.attack" [style.background]="backgroundColor"></div>
+            </div>
+        </div>
+
+        <div class="stats-item">
+            <span>Defense</span>
+            <div class="container-progress-bar">
+                <div class="progress-bar" [style.width.%]="pokemon.defense" [style.background]="backgroundColor"></div>
+            </div>  
+        </div>
+
+        <div class="stats-item">
+            <span>Sp Atk</span>
+            <div class="container-progress-bar">
+                <div class="progress-bar" [style.width.%]="pokemon.sp_atk" [style.background]="backgroundColor"></div>
+            </div>
+        </div>
+
+        <div class="stats-item">
+            <span>Sp Defense</span>
+            <div class="container-progress-bar">
+                <div class="progress-bar" [style.width.%]="pokemon.sp_def" [style.background]="backgroundColor"></div>
+            </div>
+        </div>
+
+        <div class="stats-item">
+            <span>Speed</span>
+            <div class="container-progress-bar">
+                <div class="progress-bar" [style.width.%]="pokemon.speed" [style.background]="backgroundColor"></div>
+            </div>
+        </div>
+    </div>
 </div>
